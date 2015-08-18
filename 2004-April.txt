@@ -1,0 +1,219 @@
+From yotam_medini at fastmail.fm  Mon Apr  5 01:40:26 2004
+From: yotam_medini at fastmail.fm (Yotam Medini)
+Date: Mon, 05 Apr 2004 01:40:26 +0200
+Subject: [Nikud-general] nikud-0.9.3: sample/short what am I doing wrong?
+Message-ID: <m2zn9rjor9.wl@durini.medini.gnx>
+
+Install seems to run fine. 
+But I can't get the samples to produce the desired output.
+I tried to play with some environment variables - but so far no luck.
+
+Am I doing something wrong?
+Do I miss some other installation?
+Am I having conflicting installation?
+regards -- yotam
+
+Here is some log:
+
+durini:373> pwd
+/home/local/src/nikud/nikud-0.9.3/samples/short
+durini:374> env | grep -i tex
+DVIPSHEADERS=/home/yotam/texmf/dvips/base:/home/yotam/texmf/fonts//:
+T1FONTS=/home/yotam/texmf/fonts/type1:
+TEXFONTS=/home/yotam/texmf//:
+TEXINPUTS=/home/yotam/texmf//:
+durini:375> make test.ps
+elatex test.tex
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5)
+entering extended mode
+(./test.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo))
+(/usr/share/texmf/tex/latex/psnfss/newcent.sty)
+(/home/yotam/texmf/tex/hebrew/culmus.sty
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+(/home/yotam/texmf/tex/hebrew/cp1255.def))
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+(/home/yotam/texmf/tex/hebrew/cp1255enc.def)
+(/usr/share/texmf/tex/latex/base/t1enc.def))
+(/home/yotam/texmf/tex/hebrew/cp1255.def)
+(/usr/share/texmf/tex/generic/babel/babel.sty
+(/usr/share/texmf/tex/generic/0ivritex/rlbabel.def)
+(/usr/share/texmf/tex/generic/0ivritex/hebrew.ldf
+(/usr/share/texmf/tex/generic/babel/babel.def)
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Hebrew'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+) (/usr/share/texmf/tex/generic/babel/english.ldf))
+(/usr/share/texmf/tex/generic/0ivritex/lheenc.def)) (./test.aux
+(/home/yotam/texmf/tex/hebrew/cp1255cmr.fd)
+
+LaTeX Font Warning: Font shape `cp1255/cmr/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 6.
+
+) (/usr/share/texmf/tex/generic/0ivritex/lhecmr.fd)
+(/usr/share/texmf/tex/latex/psnfss/t1pnc.fd)
+(/home/yotam/texmf/tex/hebrew/cp1255pnc.fd)
+
+LaTeX Font Warning: Font shape `cp1255/pnc/m/n' will be
+(Font)              scaled to size 10.95pt on input line 10.
+
+(/usr/share/texmf/tex/latex/psnfss/t1pcr.fd)
+
+LaTeX Font Warning: Font shape `cp1255/pnc/m/it' will be
+(Font)              scaled to size 10.95pt on input line 21.
+
+(/home/yotam/texmf/tex/hebrew/cp1255pcr.fd)
+
+LaTeX Font Warning: Font shape `cp1255/pcr/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 24.
+
+[1] (./test.aux) )
+Output written on test.dvi (1 page, 1324 bytes).
+Transcript written on test.log.
+dvips test.dvi -o test.ps
+This is dvips(k) 5.92b Copyright 2002 Radical Eye Software (www.radicaleye.com)
+' TeX output 2004.04.05:0132' -> test.ps
+kpathsea: Running mktexpk --mfmode cx --bdpi 300 --mag 1+29/300 --dpi 329 rfrank
+mktexpk: don't know how to create bitmap font for rfrank.
+kpathsea: Appending font creation commands to missfont.log.
+dvips: Font rfrank not found, characters will be left blank.
+kpathsea: Running mktexpk --mfmode cx --bdpi 300 --mag 1+29/300 --dpi 329 rfranki
+mktexpk: don't know how to create bitmap font for rfranki.
+dvips: Font rfranki not found, characters will be left blank.
+kpathsea: Running mktexpk --mfmode cx --bdpi 300 --mag 1+2/300 --dpi 302 rmiriam
+mktexpk: don't know how to create bitmap font for rmiriam.
+dvips: Font rmiriam not found, characters will be left blank.
+<texc.pro><8r.enc><texps.pro>. [1] 
+durini:376> 
+
+
+From yotam_medini at fastmail.fm  Mon Apr  5 02:24:15 2004
+From: yotam_medini at fastmail.fm (Yotam Medini)
+Date: Mon, 05 Apr 2004 02:24:15 +0200
+Subject: [Nikud-general] Re: nikud-0.9.3: sample/short what am I doing wrong - solved
+Message-ID: <m2y8pbjmq8.wl@durini.medini.gnx>
+
+Sorry, I forgot the 
+  p +culmus.map
+step.
+
+By the way, one can do this _without_ being root.
+By putting this line in say:
+  $HOME/texmf/dvips/config.ps
+and setting environment variable:
+  export DVIPSRC=$HOME/texmf/dvips/config.ps
+
+Next, I will look how to teach xdvi similar thing.
+
+PasaX shacket ve-sameaX  -- yotam
+
+
+
+From yotam_medini at fastmail.fm  Mon Apr  5 11:53:18 2004
+From: yotam_medini at fastmail.fm (Yotam Medini)
+Date: Mon, 05 Apr 2004 11:53:18 +0200
+Subject: [Nikud-general] ? "Do not use pdflatex" why
+Message-ID: <1081158798.2920.183901553@webmail.messagingengine.com>
+
+In  http://nikud.berlios.de/  it says:
+
+   Important: Do not use pdflatex or dvipdf(m) 
+   if you are using Hebrew vowel-points (Nikud).
+
+- Could someone please explain the problem.
+- Is there any effort to solve it?
+- Is there an alternative way to create pdf-bookmarks 
+  (for AcrobatReader) with vowel-points?
+
+-- yotam
+-- 
+  Yotam Medini
+  yotam_medini at fastmail.fm
+
+-- 
+http://www.fastmail.fm - Does exactly what it says on the tin
+
+
+From itail at gmx.net  Wed Apr  7 21:20:06 2004
+From: itail at gmx.net (itai)
+Date: Wed, 07 Apr 2004 22:20:06 +0300
+Subject: [Nikud-general] Re: nikud-0.9.3: sample/short what am I doing wrong - solved
+In-Reply-To: <m2y8pbjmq8.wl@durini.medini.gnx>
+References: <m2y8pbjmq8.wl@durini.medini.gnx>
+Message-ID: <40745466.9090300@gmx.net>
+
+Hello Yotam,
+Thank you for your remarks. I'll add your method to the installation 
+instructions.
+
+Itai.
+
+Yotam Medini wrote:
+
+>Sorry, I forgot the 
+>  p +culmus.map
+>step.
+>
+>By the way, one can do this _without_ being root.
+>By putting this line in say:
+>  $HOME/texmf/dvips/config.ps
+>and setting environment variable:
+>  export DVIPSRC=$HOME/texmf/dvips/config.ps
+>
+>Next, I will look how to teach xdvi similar thing.
+>
+>PasaX shacket ve-sameaX  -- yotam
+>
+>
+>  
+>
+
+
+
+
+From itail at gmx.net  Wed Apr  7 21:20:36 2004
+From: itail at gmx.net (itai)
+Date: Wed, 07 Apr 2004 22:20:36 +0300
+Subject: [Nikud-general] Re: ? "Do not use pdflatex" why
+In-Reply-To: <1081158798.2920.183901553@webmail.messagingengine.com>
+References: <1081158798.2920.183901553@webmail.messagingengine.com>
+Message-ID: <40745484.4000303@gmx.net>
+
+Hello,
+In order to put the vowel points in the right place, the tex (or dvi) 
+file should go through a full postscript interpreter, because the work 
+of placing the vowel point is done by the Type3 Postscript font. I think 
+that pdfelatex and dvipdf(m) do some shortcuts, but maybe I am wrong.
+
+If you can find a way to make it work, it would be great. Many people I 
+know work use pdflatex.
+
+Itai.
+
+
+Yotam Medini wrote:
+
+>In  http://nikud.berlios.de/  it says:
+>
+>   Important: Do not use pdflatex or dvipdf(m) 
+>   if you are using Hebrew vowel-points (Nikud).
+>
+>- Could someone please explain the problem.
+>- Is there any effort to solve it?
+>- Is there an alternative way to create pdf-bookmarks 
+>  (for AcrobatReader) with vowel-points?
+>
+>-- yotam
+>  
+>
+
+
+
+

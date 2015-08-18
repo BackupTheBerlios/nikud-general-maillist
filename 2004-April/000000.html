@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Nikud-general] nikud-0.9.3: sample/short what am I doing wrong?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/nikud-general/2004-April/index.html" >
+   <LINK REL="made" HREF="mailto:nikud-general%40lists.berlios.de?Subject=Re%3A%20%5BNikud-general%5D%20nikud-0.9.3%3A%20sample/short%20what%20am%20I%20doing%20wrong%3F&In-Reply-To=%3Cm2zn9rjor9.wl%40durini.medini.gnx%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000001.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Nikud-general] nikud-0.9.3: sample/short what am I doing wrong?</H1>
+    <B>Yotam Medini</B> 
+    <A HREF="mailto:nikud-general%40lists.berlios.de?Subject=Re%3A%20%5BNikud-general%5D%20nikud-0.9.3%3A%20sample/short%20what%20am%20I%20doing%20wrong%3F&In-Reply-To=%3Cm2zn9rjor9.wl%40durini.medini.gnx%3E"
+       TITLE="[Nikud-general] nikud-0.9.3: sample/short what am I doing wrong?">yotam_medini at fastmail.fm
+       </A><BR>
+    <I>Mon Apr  5 01:40:26 CEST 2004</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000001.html">[Nikud-general] Re: nikud-0.9.3: sample/short what am I doing wrong - solved
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#0">[ date ]</a>
+              <a href="thread.html#0">[ thread ]</a>
+              <a href="subject.html#0">[ subject ]</a>
+              <a href="author.html#0">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Install seems to run fine. 
+But I can't get the samples to produce the desired output.
+I tried to play with some environment variables - but so far no luck.
+
+Am I doing something wrong?
+Do I miss some other installation?
+Am I having conflicting installation?
+regards -- yotam
+
+Here is some log:
+
+durini:373&gt; pwd
+/home/local/src/nikud/nikud-0.9.3/samples/short
+durini:374&gt; env | grep -i tex
+DVIPSHEADERS=/home/yotam/texmf/dvips/base:/home/yotam/texmf/fonts//:
+T1FONTS=/home/yotam/texmf/fonts/type1:
+TEXFONTS=/home/yotam/texmf//:
+TEXINPUTS=/home/yotam/texmf//:
+durini:375&gt; make test.ps
+elatex test.tex
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5)
+entering extended mode
+(./test.tex
+LaTeX2e &lt;2001/06/01&gt;
+Babel &lt;v3.7h&gt; and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo))
+(/usr/share/texmf/tex/latex/psnfss/newcent.sty)
+(/home/yotam/texmf/tex/hebrew/culmus.sty
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+(/home/yotam/texmf/tex/hebrew/cp1255.def))
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+(/home/yotam/texmf/tex/hebrew/cp1255enc.def)
+(/usr/share/texmf/tex/latex/base/t1enc.def))
+(/home/yotam/texmf/tex/hebrew/cp1255.def)
+(/usr/share/texmf/tex/generic/babel/babel.sty
+(/usr/share/texmf/tex/generic/0ivritex/rlbabel.def)
+(/usr/share/texmf/tex/generic/0ivritex/hebrew.ldf
+(/usr/share/texmf/tex/generic/babel/babel.def)
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Hebrew'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+) (/usr/share/texmf/tex/generic/babel/english.ldf))
+(/usr/share/texmf/tex/generic/0ivritex/lheenc.def)) (./test.aux
+(/home/yotam/texmf/tex/hebrew/cp1255cmr.fd)
+
+LaTeX Font Warning: Font shape `cp1255/cmr/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 6.
+
+) (/usr/share/texmf/tex/generic/0ivritex/lhecmr.fd)
+(/usr/share/texmf/tex/latex/psnfss/t1pnc.fd)
+(/home/yotam/texmf/tex/hebrew/cp1255pnc.fd)
+
+LaTeX Font Warning: Font shape `cp1255/pnc/m/n' will be
+(Font)              scaled to size 10.95pt on input line 10.
+
+(/usr/share/texmf/tex/latex/psnfss/t1pcr.fd)
+
+LaTeX Font Warning: Font shape `cp1255/pnc/m/it' will be
+(Font)              scaled to size 10.95pt on input line 21.
+
+(/home/yotam/texmf/tex/hebrew/cp1255pcr.fd)
+
+LaTeX Font Warning: Font shape `cp1255/pcr/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 24.
+
+[1] (./test.aux) )
+Output written on test.dvi (1 page, 1324 bytes).
+Transcript written on test.log.
+dvips test.dvi -o test.ps
+This is dvips(k) 5.92b Copyright 2002 Radical Eye Software (www.radicaleye.com)
+' TeX output 2004.04.05:0132' -&gt; test.ps
+kpathsea: Running mktexpk --mfmode cx --bdpi 300 --mag 1+29/300 --dpi 329 rfrank
+mktexpk: don't know how to create bitmap font for rfrank.
+kpathsea: Appending font creation commands to missfont.log.
+dvips: Font rfrank not found, characters will be left blank.
+kpathsea: Running mktexpk --mfmode cx --bdpi 300 --mag 1+29/300 --dpi 329 rfranki
+mktexpk: don't know how to create bitmap font for rfranki.
+dvips: Font rfranki not found, characters will be left blank.
+kpathsea: Running mktexpk --mfmode cx --bdpi 300 --mag 1+2/300 --dpi 302 rmiriam
+mktexpk: don't know how to create bitmap font for rmiriam.
+dvips: Font rmiriam not found, characters will be left blank.
+&lt;texc.pro&gt;&lt;8r.enc&gt;&lt;texps.pro&gt;. [1] 
+durini:376&gt; 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000001.html">[Nikud-general] Re: nikud-0.9.3: sample/short what am I doing wrong - solved
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#0">[ date ]</a>
+              <a href="thread.html#0">[ thread ]</a>
+              <a href="subject.html#0">[ subject ]</a>
+              <a href="author.html#0">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/nikud-general">More information about the Nikud-general
+mailing list</a><br>
+</body></html>

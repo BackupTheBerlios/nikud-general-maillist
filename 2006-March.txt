@@ -1,0 +1,56 @@
+From hisraeli at zahav.net.il  Mon Mar 13 08:07:38 2006
+From: hisraeli at zahav.net.il (Hillel Chayim Yisraeli)
+Date: Mon, 13 Mar 2006 09:07:38 +0200
+Subject: [Nikud-general] help please with nikud for ivritex
+Message-ID: <1142233658.3268.1.camel@sun-i-am>
+
+I sent this to itai and yotam individually. now i discovered the mailing
+list, so i'm sending to the mailing list in case someone else knows what
+I need to do.  Thanks in advance.  BTW itai's email seems to be wrong.
+
+I downloaded the stuff from nikud.berlios.de and installed it as it
+says to.  (I have debian. So I have ivritex apt-got and installed.  It's
+babel 3.7 so I got that texmf tree from your nikud site and merged it
+with my system's texmf tree using rsync.)
+
+I went into the samples and tried to run them through latex, after
+converting from ucs to cp1255 like you said (both manually, and with
+'make').  
+
+LaTeX gives me the following errors:
+
+----------------------------------
+LaTeX Font Warning: Font shape `cp1255/cmr/m/n' will be
+(Font)              scaled to size 11.00006pt on input line 6.
+
+) (/usr/share/texmf/tex/generic/ivritex/lhecmr.fd)
+(/usr/share/texmf/tex/latex/psnfss/t1pnc.fd)
+(/home/spectacular/texmf/tex/hebrew/cp1255pnc.fd)
+
+LaTeX Font Warning: Font shape `cp1255/pnc/m/n' will be
+(Font)              scaled to size 13.13995pt on input line 10.
+
+
+! LaTeX Error: Command \hebzayin unavailable in encoding cp1255.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...
+
+l.11 ^^e6
+         ^^e4^^e5 ^^ee^^f9^^f4^^e8
+^^e1^^cc^^c0^^f2^^c4^^e1^^c0^^f8^^c4^^e9^...
+
+?
+--------------------------------
+
+Please tell me what I can do to fix this. I really want to be able to
+use nikud in latex.  Thanks.
+
+Hillel.
+
+-- 
+Hillel Chayim Yisraeli <hisraeli at zahav.net.il>
+
+
+
